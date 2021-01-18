@@ -1,0 +1,60 @@
+<div class="page-header">
+  <h3 class="page-title">
+    Grafikler
+  </h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:;">Grafikler</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Grafikler</li>
+    </ol>
+  </nav>
+</div>
+<div class="row">
+  <div class="col-lg-8 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">(2020)Aylık Makale Okunma Sayısı (Bin)</h4>
+        <canvas baseChart [chartType]="'line'" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Kategorilere Göre Makale Dağılımı (2020)</h4>
+        <canvas baseChart [chartType]="'bar'" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [colors]="barChartColors"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-8 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Kategorilere Yapılan Beğeni Sayısı (2020)</h4>
+        <canvas baseChart [chartType]="'line'" [datasets]="areaChartData1" [labels]="areaChartLabels" [options]="areaChartOptions" [colors]="areaChartColors"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-8 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Kategorilere Yapılan Yorum Sayısı (2020)</h4>
+        <canvas baseChart [chartType]="'line'" [datasets]="areaChartData" [labels]="areaChartLabels" [options]="areaChartOptions" [colors]="areaChartColors"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-8 grid-margin grid-margin-lg-0 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Sayfaki Cinsiyet Dağılımı (2020)</h4>
+        <canvas baseChart [chartType]="'pie'" [datasets]="doughnutPieChartData" [labels]="doughnutPieChartLabels" [options]="doughnutPieChartOptions" [colors]="doughnutPieChartColors"></canvas>
+      </div>
+    </div>
+  </div>
+ 

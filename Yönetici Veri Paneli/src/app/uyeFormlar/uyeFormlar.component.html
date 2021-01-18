@@ -1,0 +1,558 @@
+<div class="container mt-12">
+
+<div class="page-header">
+  <h3 class="page-title">
+    <br>    <br>
+    <span class="page-title-icon bg-gradient-danger text-white mr-2">
+      <i class="mdi mdi-format-list-bulleted menu-icon"></i>                 
+    </span>
+    <button class=" btn-gradient-danger">Sitedeki Form Paneli</button>
+  </h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:;">Formlar</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Form Elemanları</li>
+    </ol>
+  </nav>
+</div>
+<div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Giriş Yapma Formu</h4>
+        <p class="card-description">
+          Basit Tasarımlı Giriş Yapma Formu
+        </p>
+        <form class="forms-sample">
+          <div class="form-group">
+            <label for="exampleInputUsername1">E-Posta Adresi</label>
+            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="furkancimili@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Şifre</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Şifre">
+          </div>
+          <div class="form-check form-check-flat form-check-primary">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input">
+              Hatırla Beni
+              <i class="input-helper"></i>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-gradient-primary mr-4">Oturum Aç</button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Kayıt Ol Formu</h4>
+        <p class="card-description">
+          Basit Tasarımda Kayıt Ol Formu
+        </p>
+        <form class="forms-sample">
+          <div class="form-group row">
+            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Ad Soyad</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="exampleInputUsername2" placeholder="furkancimili">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="20191132039furkancimili@gmail.com">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="exampleInputMobile" class="col-sm-3 col-form-label">Telefon Numarası</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="exampleInputMobile" placeholder="+90 (537)361 05 80">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Şifre</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Şifre">
+            </div>
+          </div>
+          
+          <div class="form-check form-check-flat form-check-primary">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input">
+              Tüm Hüküm ve Koşulları kabul ediyorum
+              <i class="input-helper"></i>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-gradient-primary mr-4">Kayıt Ol</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Öneri Ve Şikayetleriniz</h4>
+        <p class="card-description">
+          Öneri Ve Şikayet Formu
+        </p>
+        <form class="forms-sample">
+          <div class="form-group">
+            <label for="exampleInputName1">Kullanıcı Adınız</label>
+            <input type="text" class="form-control" id="exampleInputName1" placeholder="furkancimili">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Email adresiniz</label>
+            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="20191132039furkancimili@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleSelectGender">Kime</label>
+              <select class="form-control" id="exampleSelectGender">
+                <option>Yönetici</option>
+                <option>Yazar</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleSelectGender">Konu İçerği</label>
+                <select class="form-control" id="exampleSelectGender">
+                  <option>Şikayet</option>
+                  <option>Öneri</option>
+                  <option>Diğer</option>
+                </select>
+              </div>
+          <div class="form-group">
+            <label>Yüklemek İstediğiniz Dosyalar</label>
+            <input type="file" name="img[]" class="file-upload-default">
+            <div class="input-group col-xs-12">
+              <input type="text" class="form-control file-upload-info" disabled placeholder="Yüklenecek Dosyalar">
+              <span class="input-group-append">
+                <button class="file-upload-browse btn btn-gradient-warning" type="button">Yükle</button>
+              </span>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label for="exampleTextarea1">İletmek İstediğiniz Mesaj(İsteğe Bağlı)</label>
+            <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gradient-success mr-2">Gönder</button>
+          <button class="btn btn-danger">Geri Dön</button>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">İş Başvuru Formu</h4>
+        <form class="form-sample">
+          <p class="card-description">
+            İş Başvurusu İçin Doldurulması Gereken Bilgiler
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Adınız</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Soyadınız</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Cinsiyetiniz</label>
+                <div class="col-sm-9">
+                  <select class="form-control">
+                    <option></option>
+                    <option>Kadın</option>
+                    <option>Erkek</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Doğum Tarihiniz</label>
+                <div class="col-sm-9">
+                  <input class="form-control" placeholder="gg/aa/yyyy"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Öğrenim Durumunuz</label>
+                <div class="col-sm-9">
+                  <select class="form-control">
+                    <option></option>
+                    <option>İlkokul Mezunu</option>
+                    <option>Ortaokul Mezunu</option>
+                    <option>Lise Mezunu</option>
+                    <option>Üniversite Mezunu</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+           
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">İş Deneyiminiz</label>
+                  <div class="col-sm-9">
+                    <select class="form-control">
+                      <option></option>
+                      <option>Tecrübesiz</option>
+                      <option>1-2 Yıl</option>
+                      <option>3-4 Yıl</option>
+                      <option>5+ Yıl</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Başvurduğunuz Alan</label>
+                  <div class="col-sm-9">
+                    <select class="form-control">
+                      <option></option>
+                      <option>Yazarlık</option>
+                      <option>Grafik Tasarım</option>
+                      <option>Veri Tabanı</option>
+                      <option>Sosyal Medya Gönderileri</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Çalışma Süreniz</label>
+                <div class="col-sm-4">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked>
+                      Yarı Zamanlı
+                      <i class="input-helper"></i>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm-5">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
+                      Sürekli
+                      <i class="input-helper"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="card-description">
+            Adresiniz
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Adres 1</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Adres 2</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">İl</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">İlçe</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Posta Kodu</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Country</label>
+                <div class="col-sm-9">
+                  <select class="form-control">
+                    <option></option>
+                    <option>TÜRKİYE</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-gradient-success mr-2">Gönder</button>
+          <button class="btn btn-danger">İptal Et</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<nav id="uyesidebar" class="sidebar" [ngClass]="{'sidebar-bg' : hasBackgroundImage()}">
+  <div class="sidebar-content">
+      <div class="sidebar-header">
+        <a href="#">Yönetici Veri Paneli(Genel)</a>
+      </div>
+
+      <div class="sidebar-profile">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://furkancimili.ml/wp-content/uploads/2020/10/cropped-WebLogo.jpg" alt="User picture">
+        
+        </div>
+        <div class="user-info">
+          <b>{{adsoyad}}</b>
+          <span class="user-role">Yazar</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Aktif</span>
+          </span>
+        </div>
+      </div>
+      
+        
+      <div class="sidebar-menu">
+        <ul>
+             <li class="nav-item" [ngClass]="{ 'active':sidebaruye.isActive }">
+              <h4>  <a class="nav-link" routerLink="/sidebaruye" routerLinkActive #sidebaruye="routerLinkActive">
+                   <span class="menu-title">Ana Sayfa</span>
+                   &nbsp;<i class="mdi mdi-home"></i>
+                 </a></h4> 
+               </li>
+               
+        <li class="nav-item" [ngClass]="{ 'active':uyepaneli.isActive }">
+          <h4>  <a class="nav-link" routerLink="/uyepaneli" routerLinkActive #uyepaneli="routerLinkActive">
+               <span class="menu-title">Veri Paneli</span>
+               &nbsp;<i class="mdi mdi-chart-arc"></i>
+             </a></h4> 
+           </li>
+           
+        <li class="nav-item" [ngClass]="{ 'active': uyegrafikler.isActive }">
+       <h4>   <a class="nav-link" routerLink="/uyegrafikler" routerLinkActive #uyegrafikler="routerLinkActive">
+            <span class="menu-title">Grafik Tabloları(Total)</span>
+            &nbsp;  <i class="mdi mdi-chart-areaspline"></i>
+          </a></h4>
+        </li>
+       
+       
+        <li class="nav-item" [ngClass]="{ 'active': uyetablolar.isActive }">
+       <h4>   <a class="nav-link" routerLink="/uyetablolar" routerLinkActive #uyetablolar="routerLinkActive">
+            <span class="menu-title">Veri Tabloları(Total)</span>
+            &nbsp;  <i class="mdi mdi-table-large menu-icon"></i> 
+          </a></h4>
+        </li>
+        <li class="nav-item" [ngClass]="{ 'active': uyeformlar.isActive }">
+         <h4> <a class="nav-link" routerLink="/uyeformlar" routerLinkActive #uyeformlar="routerLinkActive">
+            <span class="menu-title">Formlar</span>
+            &nbsp;  <i class="mdi mdi-format-list-bulleted menu-icon"></i> 
+          </a></h4>
+        </li>     
+        <li class="nav-item" [ngClass]="{ 'active': uyemakaleler.isActive }">
+          <h4> <a class="nav-link" routerLink="/uyemakaleler" routerLinkActive #uyemakaleler="routerLinkActive">
+             <span class="menu-title">Makaleler(Total)</span>
+             &nbsp;  <i class="mdi mdi-format-align-center  menu-icon"></i> 
+           </a></h4>
+         </li>     
+         <li class="nav-item" [ngClass]="{ 'active': uyeduyurular.isActive }">
+          <h4> <a class="nav-link" routerLink="/uyeduyurular" routerLinkActive #uyeduyurular="routerLinkActive">
+             <span class="menu-title">Duyurular(Genel)</span>
+             &nbsp;  <i class="mdi mdi-email-alert menu-icon"></i> 
+           </a></h4>
+         </li>   
+         <li class="nav-item" [ngClass]="{ 'active': uyeiletisim.isActive }">
+          <h4> <a class="nav-link" routerLink="/uyeiletisim" routerLinkActive #uyeiletisim="routerLinkActive">
+             <span class="menu-title">İletişim</span>
+             &nbsp;  <i class="mdi mdi-phone-classic menu-icon"></i> 
+           </a></h4>
+         </li>       
+              </ul>
+            </div>       
+      </div>
+      <div class="sidebar-footer">
+        <div class="dropdown" dropdown>
+    
+          <a href="" dropdownToggle>
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-pill badge-warning notification">5</span>
+          </a>
+          <div class="dropdown-menu notifications" *dropdownMenu>
+            <div class="notifications-header">
+              <i class="fa fa-bell"></i>
+              Notifications
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">
+              <div class="notification-content">
+                <div class="icon">
+                  <i class="fas fa-check text-success border border-success"></i>
+                </div>
+                <div class="content">
+                  <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                  <div class="notification-time">
+                    6 minutes ago
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="dropdown-item" href="">
+              <div class="notification-content">
+                <div class="icon">
+                  <i class="fas fa-exclamation text-info border border-info"></i>
+                </div>
+                <div class="content">
+                  <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                  <div class="notification-time">
+                    Today
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="dropdown-item" href="">
+              <div class="notification-content">
+                <div class="icon">
+                  <i class="fas fa-exclamation-triangle text-warning border border-warning"></i>
+                </div>
+                <div class="content">
+                  <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                  <div class="notification-time">
+                    Yesterday
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-center" href="#">View all notifications</a>
+          </div>
+        </div>
+        <div class="dropdown" dropdown>
+          <a href="#" dropdownToggle>
+            <i class="fa fa-envelope"></i>
+            <span class="badge badge-pill badge-success notification">7</span>
+          </a>
+          <div class="dropdown-menu messages" *dropdownMenu>
+            <div class="messages-header">
+              <i class="fa fa-envelope"></i>
+              Messages
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <div class="message-content">
+                <div class="pic">
+                  <img src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="content">
+                  <div class="message-title">
+                    <strong> Jhon doe</strong>
+                  </div>
+                  <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                </div>
+              </div>
+    
+            </a>
+            <a class="dropdown-item" href="">
+              <div class="message-content">
+                <div class="pic">
+                  <img src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="content">
+                  <div class="message-title">
+                    <strong> Jhon doe</strong>
+                  </div>
+                  <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                </div>
+              </div>
+    
+            </a>
+            <a class="dropdown-item" href="">
+              <div class="message-content">
+                <div class="pic">
+                  <img src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="content">
+                  <div class="message-title">
+                    <strong> Jhon doe</strong>
+                  </div>
+                  <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-center" href="#">View all messages</a>
+    
+          </div>
+        </div>
+        <div class="dropdown" dropdown>
+          <a href="" dropdownToggle>
+            <i class="fa fa-cog"></i>
+            <span class="badge-sonar"></span>
+          </a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a class="dropdown-item" href="">My profile</a>
+            <a class="dropdown-item" href="">Help</a>
+            <a class="dropdown-item" href="">Setting</a>
+          </div>
+        </div>
+        <div>
+          <a href="giris">
+            <i class="fa fa-power-off" (click)="OturumKapat()"
+            *ngIf="fbServis.OturumKontrol()"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between py-2">
+        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Yönetici Veri Paneli</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">İçerik <a href="https://furkancimili.ml/" target="_blank"> Yönetici Paneli</a>Sayfası<a href="https://furkancimili.ml/" target="_blank">furkancimili.ml</a></span>
+      </div>
+    </footer>
+    
+    
+    

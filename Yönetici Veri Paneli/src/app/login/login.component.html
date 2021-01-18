@@ -1,0 +1,73 @@
+<div class="d-flex align-items-center auth px-0">
+  <div class="row w-100 mx-0">
+    <div class="col-lg-6 mx-auto">
+ 
+      <div class="auth-form-light text-center py-5 px-4 px-sm-5">
+        <div class="brand-logo">
+          <img src="assets/images/WebLogo.jpg" alt="logo">
+        </div>       
+        
+
+        <div class="card-header">
+          <h4>Merhabalar,Yönetici Veri Paneline Hoşgeldiniz</h4>
+          <h6 class="font-weight-light">Panele Ulaşmak İçin Oturum Açmanız Gerekli.</h6>
+        </div>
+        <div *ngIf="user" class="card text-center">
+          <div class="card-block"></div>
+          <img *ngIf="user.photoUrl" class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
+          <div class="card-block">
+            <h4 class="card-title">{{ user.name }}</h4>
+            <p class="card-text">{{ user.email }}</p>
+            <p class="card-text"> {{ user.provider }} ile giriş yaptınız</p>
+          </div>
+          <div class="card-block">
+            <button class="btn btn-outline-info"  routerLink="/sidebaruye" >Oturum Aç</button> &nbsp;
+                      <button class="btn btn-outline-danger" (click)="signOut()">Çıkış Yap</button>
+          </div>
+          <div class="card-block" *ngIf="user.provider === GoogleLoginProvider.PROVIDER_ID">
+            <button class="btn" (click)="refreshGoogleToken()"> </button>
+          </div>
+        </div>      
+        <br><br><br>
+        <div class="card-body">
+          <div class="form-group text-left" >
+            <label>E-Posta Adresi</label>
+            <input type="text" name="mail" #mail class="form-control">
+          </div>
+          <div class="form-group text-left">
+            <label>Parola</label>
+            <input type="password" name="parola" #parola class="form-control">
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="my-2 d-flex justify-content-between align-items-center">
+            <div class="form-check">
+              <label class="form-check-label text-muted">
+                <input type="checkbox" class="form-check-input">
+                <i class="input-helper"></i>
+                Oturumumu açık tut
+              </label>
+            </div>
+           
+          </div>
+          <button class="btn btn-outline-info"   (click)="GirisYap(mail.value,parola.value)" >Oturum Aç</button> &nbsp;
+          <button class="btn btn-outline-warning"  routerLink="/giris" >Arayüze Dönüş</button>
+        </div>
+        <hr>
+        <div *ngIf="!user" class="card text-center">
+        </div>
+        <br>
+        <div class="card-block">
+          <h4 class="font-weight-light text-center ">Sosyal Medya Hesaplarınızla Panel´de Ziyaretçi Olarak Oturum Açabilirsiniz.</h4>
+          <hr>
+          <button class="btn btn-block btn-google auth-form-btn" (click)="signInWithGoogle()"><span class="mdi mdi-google mr-2"></span></button>
+          <button class="btn btn-block btn-facebook auth-form-btn" (click)="signInWithFB()"><span class="mdi mdi-facebook mr-2"></span></button>
+        </div>
+      </div>
+      <div [ngClass]="sonuc.islem ? 'alert alert-success':'alert alert-danger'" *ngIf="sonuc.mesaj?.length>0">
+        {{sonuc.mesaj}}</div>
+      
+    
+    </div>
+  </div>
+</div>

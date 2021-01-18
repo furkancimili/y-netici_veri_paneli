@@ -1,0 +1,288 @@
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<nav id="uyesidebar" class="sidebar" [ngClass]="{'sidebar-bg' : hasBackgroundImage()}">
+  <div class="sidebar-content">
+      <div class="sidebar-header">
+        <a href="#">Yönetici Veri Paneli(Genel)</a>
+      </div>
+
+      <div class="sidebar-profile">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://furkancimili.ml/wp-content/uploads/2020/10/cropped-WebLogo.jpg" alt="User picture">
+        
+        </div>
+        <div class="user-info">
+          <b>{{adsoyad}}</b>
+          <span class="user-role">Yazar</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span class="login-status online">Aktif</span>    
+          </span>
+        </div>
+      </div>
+      
+        
+      <div class="sidebar-menu">
+        <ul>
+          <li class="nav-item" [ngClass]="{ 'active':sidebaruye.isActive }">
+            <h4>  <a class="nav-link" routerLink="/sidebaruye" routerLinkActive #sidebaruye="routerLinkActive">
+                 <span class="menu-title">Ana Sayfa</span>
+                 &nbsp;<i class="mdi mdi-home"></i>
+               </a></h4> 
+             </li>
+    
+        <li class="nav-item" [ngClass]="{ 'active':uyepaneli.isActive }">
+       <h4>  <a class="nav-link" routerLink="/uyepaneli" routerLinkActive #uyepaneli="routerLinkActive">
+            <span class="menu-title">Veri Paneli</span>
+            &nbsp;<i class="mdi mdi-chart-arc"></i>
+          </a></h4> 
+        </li>
+        <li class="nav-item" [ngClass]="{ 'active': uyegrafikler.isActive }">
+       <h4>   <a class="nav-link" routerLink="/uyegrafikler" routerLinkActive #uyegrafikler="routerLinkActive">
+            <span class="menu-title">Grafik Tabloları(Total)</span>
+            &nbsp;  <i class="mdi mdi-chart-areaspline"></i>
+          </a></h4>
+        </li>
+       
+       
+        <li class="nav-item" [ngClass]="{ 'active': uyetablolar.isActive }">
+       <h4>   <a class="nav-link" routerLink="/uyetablolar" routerLinkActive #uyetablolar="routerLinkActive">
+            <span class="menu-title">Veri Tabloları(Total)</span>
+            &nbsp;  <i class="mdi mdi-table-large menu-icon"></i> 
+          </a></h4>
+        </li>
+        <li class="nav-item" [ngClass]="{ 'active': uyeformlar.isActive }">
+         <h4> <a class="nav-link" routerLink="/uyeformlar" routerLinkActive #uyeformlar="routerLinkActive">
+            <span class="menu-title">Formlar</span>
+            &nbsp;  <i class="mdi mdi-format-list-bulleted menu-icon"></i> 
+          </a></h4>
+        </li>     
+        <li class="nav-item" [ngClass]="{ 'active': uyemakaleler.isActive }">
+          <h4> <a class="nav-link" routerLink="/uyemakaleler" routerLinkActive #uyemakaleler="routerLinkActive">
+             <span class="menu-title">Makaleler(Total)</span>
+             &nbsp;  <i class="mdi mdi-format-align-center menu-icon"></i> 
+           </a></h4>
+         </li>       
+         <li class="nav-item" [ngClass]="{ 'active': uyeduyurular.isActive }">
+          <h4> <a class="nav-link" routerLink="/uyeduyurular" routerLinkActive #uyeduyurular="routerLinkActive">
+             <span class="menu-title">Duyurular(Genel)</span>
+             &nbsp;  <i class="mdi mdi-email-alert menu-icon"></i> 
+           </a></h4>
+         </li>   
+         <li class="nav-item" [ngClass]="{ 'active': uyeiletisim.isActive }">
+          <h4> <a class="nav-link" routerLink="/uyeiletisim" routerLinkActive #uyeiletisim="routerLinkActive">
+             <span class="menu-title">İletişim</span>
+             &nbsp;  <i class="mdi mdi-format-list-bulleted menu-icon"></i> 
+           </a></h4>
+         </li>              
+              </ul>
+            </div>       
+      </div>
+      <div class="sidebar-footer">
+        <div class="dropdown" dropdown>
+    
+          <a href="#" dropdownToggle>
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-pill badge-warning notification">5</span>
+          </a>
+          <div class="dropdown-menu notifications" *dropdownMenu>
+            <div class="notifications-header">
+              <i class="fa fa-bell"></i>
+              Notifications
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <div class="notification-content">
+                <div class="icon">
+                  <i class="fas fa-check text-success border border-success"></i>
+                </div>
+                <div class="content">
+                  <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                  <div class="notification-time">
+                    6 minutes ago
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="dropdown-item" href="#">
+              <div class="notification-content">
+                <div class="icon">
+                  <i class="fas fa-exclamation text-info border border-info"></i>
+                </div>
+                <div class="content">
+                  <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                  <div class="notification-time">
+                    Today
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="dropdown-item" href="#">
+              <div class="notification-content">
+                <div class="icon">
+                  <i class="fas fa-exclamation-triangle text-warning border border-warning"></i>
+                </div>
+                <div class="content">
+                  <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                  <div class="notification-time">
+                    Yesterday
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-center" href="#">View all notifications</a>
+          </div>
+        </div>
+        <div class="dropdown" dropdown>
+          <a href="#" dropdownToggle>
+            <i class="fa fa-envelope"></i>
+            <span class="badge badge-pill badge-success notification">7</span>
+          </a>
+          <div class="dropdown-menu messages" *dropdownMenu>
+            <div class="messages-header">
+              <i class="fa fa-envelope"></i>
+              Messages
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">
+              <div class="message-content">
+                <div class="pic">
+                  <img src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="content">
+                  <div class="message-title">
+                    <strong> Jhon doe</strong>
+                  </div>
+                  <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                </div>
+              </div>
+    
+            </a>
+            <a class="dropdown-item" href="">
+              <div class="message-content">
+                <div class="pic">
+                  <img src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="content">
+                  <div class="message-title">
+                    <strong> Jhon doe</strong>
+                  </div>
+                  <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                </div>
+              </div>
+    
+            </a>
+            <a class="dropdown-item" href="">
+              <div class="message-content">
+                <div class="pic">
+                  <img src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="content">
+                  <div class="message-title">
+                    <strong> Jhon doe</strong>
+                  </div>
+                  <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-center" href="#">View all messages</a>
+    
+          </div>
+        </div>
+        <div class="dropdown" dropdown>
+          <a href="" dropdownToggle>
+            <i class="fa fa-cog"></i>
+            <span class="badge-sonar"></span>
+          </a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a class="dropdown-item" href="">My profile</a>
+            <a class="dropdown-item" href="">Help</a>
+            <a class="dropdown-item" href="">Setting</a>
+          </div>
+        </div>
+        <div>
+          <a href="giris">
+            <i class="fa fa-power-off" (click)="OturumKapat()"
+            *ngIf="fbServis.OturumKontrol()"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+     
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+<div class="row" id="contatti">
+<div class="container mt-5" >
+
+    <div class="row" style="height:550px;">
+      <div class="col-md-6 maps" >
+         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11880.492291371422!2d12.4922309!3d41.8902102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x28f1c82e908503c4!2sColosseo!5e0!3m2!1sit!2sit!4v1524815927977" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-6">
+        
+        <form action="">
+          <div class="row">
+            <div class="col-lg-6">
+              
+        
+            </div>
+            <div class="col-lg-6">
+              
+                       </div>
+          
+            
+            <div class="col-12">
+            <div class="form-group">
+              <div class="form-check">
+               
+              </div>
+            </div>
+            </div>
+            
+          </div>
+        </form>
+        <div class="text-white">
+          <h2 class="text-uppercase mt-4 font-weight-bold">Yönetici</h2>
+        <h2 class="text-uppercase mt-4 font-weight-bold"> İletişim Adresleri</h2>
+
+        <i class="fas fa-phone mt-3"></i> <a href="tel:+">(+90) 537 361 05 80</a><br>>
+        <i class="fa fa-envelope mt-3"></i> <a href="">20191132039furkancimili@gmail.com</a><br>
+        <i class="fas fa-globe mt-3"></i>Kuşadası<br>
+        <i class="fas fa-globe mt-3"></i> TÜRKİYE<br>
+       
+        </div>
+        <h2 class="text-uppercase mt-3 font-weight-bold text-white">Yönetici</h2>
+        <h2 class="text-uppercase mt-3 font-weight-bold text-white">Sosyal Medya Hesapları</h2>
+        <a href="https://www.facebook.com/furkancimi/"><i class="fab fa-facebook fa-3x pr-4"></i></a>
+        <a href="https://github.com/furkancimili"><i class="fab fa-github fa-3x pr-4"></i></a>
+        <a href="https://www.linkedin.com/in/furkan-%C3%A7imili-a83a1b199/"><i class="fab fa-linkedin fa-3x"></i></a>    
+      </div>
+
+    </div>
+</div>
+</div>
+<footer class="footer">
+  <div class="d-sm-flex justify-content-center justify-content-sm-between py-2">
+    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Yönetici Veri Paneli</span>
+    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">İçerik <a href="https://furkancimili.ml/" target="_blank"> Yönetici Paneli</a>Sayfası<a href="https://furkancimili.ml/" target="_blank">furkancimili.ml</a></span>
+  </div>
+</footer>
+
+
+

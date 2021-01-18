@@ -1,0 +1,290 @@
+<div class="container mt-12">
+  <div class="row">
+  
+    <div class="col-md-12 grid-margin grid-margin-md-5 stretch-card">
+    
+    </div>
+  </div>
+  <h3 class="page-title">
+    <br>    <br>
+    <span class="page-title-icon bg-gradient-success text-white mr-2">
+      <i class="mdi mdi-format-align-center menu-icon"></i>                 
+    </span>
+    <button class=" btn-gradient-success">Sitedeki Yazarların Makaleleri(Total)</button>
+  </h3>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row alert alert-secondary" *ngIf="detay">
+        <div class="col-md-6">
+          <h5>Makale Adı</h5>
+          <p>{{secKayitlar.baslik}}</p>
+          <h5>Makale İçeriği</h5>
+          <p>{{secKayitlar.icerik}}</p>
+        </div>
+        <div class="col-md-6">
+          <h5>Makale Kayıt Tarihi</h5>
+          <p>{{secKayitlar.kayTarih | date:'dd.MM.yyyy HH:mm:sss'}}</p>
+          <h5>Makale Düzenleme Tarihi</h5>
+          <p>{{secKayitlar.duzTarih | date:'dd.MM.yyyy HH:mm:sss'}}</p>
+    
+          <h5>Durumu</h5>
+          <p><span class="badge badge-pill bg-success text-white" *ngIf="secKayitlar.islem">Onaylandı</span>
+            <span class="badge badge-pill bg-danger text-white" *ngIf="!secKayitlar.islem">Onay Bekleniyor!</span>
+          </p>
+          <button class="btn btn-outline-danger btn-sm" (click)="detay=false;">Kapat</button>
+    
+        </div>
+      </div>
+
+      <div class="card mt-3" *ngFor="let kayit of kayitlar">
+        <div class="card-header">
+          <h4>{{kayit.baslik}}</h4>
+          <div style="float: right;">
+            <td><button class="btn btn-outline-info btn-sm" (click)="KayitSec(kayit);detay=true;">Detay</button>
+
+            
+          </div>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="kayit.icerik"></div>
+        </div>
+        <div class="card-footer">
+          <b>Yazar Uid:</b>{{kayit.uid}} <br>
+          <b>Eklenme Tarihi :</b>{{kayit.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi :</b>{{kayit.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+        
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<nav id="uyesidebar" class="sidebar" [ngClass]="{'sidebar-bg' : hasBackgroundImage()}">
+  <div class="sidebar-content">
+      <div class="sidebar-header">
+        <a href="/sidebaruye">Yönetici Veri Paneli(Genel)</a>
+      </div>
+
+      <div class="sidebar-profile">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://furkancimili.ml/wp-content/uploads/2020/10/cropped-WebLogo.jpg" alt="User picture">
+        
+        </div>
+        <div class="user-info">
+          <b>{{adsoyad}}</b>
+          <span class="user-role">Yazar</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Aktif</span>
+          </span>
+        </div>
+      </div>
+      
+        
+      <div class="sidebar-menu">
+        <ul>
+          <li class="nav-item" [ngClass]="{ 'active':sidebaruye.isActive }">
+            <h4>  <a class="nav-link" routerLink="/sidebaruye" routerLinkActive #sidebaruye="routerLinkActive">
+                 <span class="menu-title">Ana Sayfa</span>
+                 &nbsp;<i class="mdi mdi-home"></i>
+               </a></h4> 
+             </li>
+    
+        <li class="nav-item" [ngClass]="{ 'active':uyepaneli.isActive }">
+       <h4>  <a class="nav-link" routerLink="/uyepaneli" routerLinkActive #uyepaneli="routerLinkActive">
+            <span class="menu-title">Veri Paneli</span>
+            &nbsp;<i class="mdi mdi-chart-arc"></i>
+          </a></h4> 
+        </li>
+        <li class="nav-item" [ngClass]="{ 'active': uyegrafikler.isActive }">
+       <h4>   <a class="nav-link" routerLink="/uyegrafikler" routerLinkActive #uyegrafikler="routerLinkActive">
+            <span class="menu-title">Grafik Tabloları(Total)</span>
+            &nbsp;  <i class="mdi mdi-chart-areaspline"></i>
+          </a></h4>
+        </li>
+       
+       
+        <li class="nav-item" [ngClass]="{ 'active': uyetablolar.isActive }">
+       <h4>   <a class="nav-link" routerLink="/uyetablolar" routerLinkActive #uyetablolar="routerLinkActive">
+            <span class="menu-title">Veri Tabloları(Total)</span>
+            &nbsp;  <i class="mdi mdi-table-large menu-icon"></i> 
+          </a></h4>
+        </li>
+        <li class="nav-item" [ngClass]="{ 'active': uyeformlar.isActive }">
+         <h4> <a class="nav-link" routerLink="/uyeformlar" routerLinkActive #uyeformlar="routerLinkActive">
+            <span class="menu-title">Formlar</span>
+            &nbsp;  <i class="mdi mdi-format-list-bulleted menu-icon"></i> 
+          </a></h4>
+        </li>     
+        <li class="nav-item" [ngClass]="{ 'active': uyemakaleler.isActive }">
+          <h4> <a class="nav-link" routerLink="/uyemakaleler" routerLinkActive #uyemakaleler="routerLinkActive">
+             <span class="menu-title">Makaleler(Total)</span>
+             &nbsp;  <i class="mdi mdi-format-align-center menu-icon"></i> 
+           </a></h4>
+         </li>     
+         <li class="nav-item" [ngClass]="{ 'active': uyeduyurular.isActive }">
+          <h4> <a class="nav-link" routerLink="/uyeduyurular" routerLinkActive #uyeduyurular="routerLinkActive">
+             <span class="menu-title">Duyurular(Genel)</span>
+             &nbsp;  <i class="mdi mdi-email-alert menu-icon"></i> 
+           </a></h4>
+         </li>   
+         <li class="nav-item" [ngClass]="{ 'active': uyeiletisim.isActive }">
+          <h4> <a class="nav-link" routerLink="/uyeiletisim" routerLinkActive #uyeiletisim="routerLinkActive">
+             <span class="menu-title">İletişim</span>
+             &nbsp;  <i class="mdi mdi-phone-classic menu-icon"></i> 
+           </a></h4>
+         </li>       
+              </ul>
+            </div>       
+      </div>
+      <div class="sidebar-footer">
+        <div class="dropdown" dropdown>
+    
+          <a href="#" dropdownToggle>
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-pill badge-warning notification">5</span>
+          </a>
+          <div class="dropdown-menu notifications" *dropdownMenu>
+            <div class="notifications-header">
+              <i class="fa fa-bell"></i>
+              Notifications
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <div class="notification-content">
+                <div class="icon">
+                  <i class="fas fa-check text-success border border-success"></i>
+                </div>
+                <div class="content">
+                  <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                  <div class="notification-time">
+                    6 minutes ago
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="dropdown-item" href="#">
+              <div class="notification-content">
+                <div class="icon">
+                  <i class="fas fa-exclamation text-info border border-info"></i>
+                </div>
+                <div class="content">
+                  <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                  <div class="notification-time">
+                    Today
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="dropdown-item" href="#">
+              <div class="notification-content">
+                <div class="icon">
+                  <i class="fas fa-exclamation-triangle text-warning border border-warning"></i>
+                </div>
+                <div class="content">
+                  <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                  <div class="notification-time">
+                    Yesterday
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-center" href="#">View all notifications</a>
+          </div>
+        </div>
+        <div class="dropdown" dropdown>
+          <a href="#" dropdownToggle>
+            <i class="fa fa-envelope"></i>
+            <span class="badge badge-pill badge-success notification">7</span>
+          </a>
+          <div class="dropdown-menu messages" *dropdownMenu>
+            <div class="messages-header">
+              <i class="fa fa-envelope"></i>
+              Messages
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <div class="message-content">
+                <div class="pic">
+                  <img src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="content">
+                  <div class="message-title">
+                    <strong> Jhon doe</strong>
+                  </div>
+                  <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                </div>
+              </div>
+    
+            </a>
+            <a class="dropdown-item" href="#">
+              <div class="message-content">
+                <div class="pic">
+                  <img src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="content">
+                  <div class="message-title">
+                    <strong> Jhon doe</strong>
+                  </div>
+                  <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                </div>
+              </div>
+    
+            </a>
+            <a class="dropdown-item" href="#">
+              <div class="message-content">
+                <div class="pic">
+                  <img src="assets/img/user.jpg" alt="">
+                </div>
+                <div class="content">
+                  <div class="message-title">
+                    <strong> Jhon doe</strong>
+                  </div>
+                  <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. In totam explicabo</div>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-center" href="#">View all messages</a>
+    
+          </div>
+        </div>
+        <div class="dropdown" dropdown>
+          <a href="#" dropdownToggle>
+            <i class="fa fa-cog"></i>
+            <span class="badge-sonar"></span>
+          </a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a class="dropdown-item" href="#">My profile</a>
+            <a class="dropdown-item" href="#">Help</a>
+            <a class="dropdown-item" href="#">Setting</a>
+          </div>
+        </div>
+        <div>
+          <a href="#">
+            <i class="fa fa-power-off"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between py-2">
+        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Yönetici Veri Paneli</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">İçerik <a href="https://furkancimili.ml/" target="_blank"> Yönetici Paneli</a>Sayfası<a href="https://furkancimili.ml/" target="_blank">furkancimili.ml</a></span>
+      </div>
+    </footer>
+    
+    
+    

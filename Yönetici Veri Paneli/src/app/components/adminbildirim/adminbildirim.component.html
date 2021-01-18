@@ -1,0 +1,110 @@
+<div class="container ">
+
+  <div class="row alert alert-danger" *ngIf="bildirimsilme">
+    <div class="col-md-12">
+      <p> <b>{{secBildirimler.baslik}}</b> Başlıklı Duyuru silinecektir. Onaylıyor musunuz?</p>
+      <button class="btn btn-outline-danger btn-sm" (click)="BildirimSil()">Evet,Sil</button>
+      <button class="btn btn-outline-primary btn-sm ml-2" (click)="bildirimsilme=false;">Hayır,Kapat</button>
+    </div>
+  </div>
+  
+
+  <div class="row alert alert-secondary" *ngIf="bildirimdetay">
+    <div class="col-md-6">
+      <h5>Duyuru Adı</h5>
+      <p>{{secBildirimler.baslik}}</p>
+      <h5>Duyuru İçeriği</h5>
+      <p>{{secBildirimler.icerik}}</p>
+      <h5>Duyuru Kategori</h5>
+      <p>{{secBildirimler.kategori}}</p>
+    </div>
+    <div class="col-md-6">
+      <h5>Duyuru Kayıt Tarihi</h5>
+      <p>{{secBildirimler.kayTarih | date:'dd.MM.yyyy HH:mm:sss'}}</p>
+      <h5>Duyuru Düzenleme Tarihi</h5>
+      <p>{{secBildirimler.duzTarih | date:'dd.MM.yyyy HH:mm:sss'}}</p>
+
+      <h5>Durumu</h5>
+      <p><span class="badge badge-pill bg-success text-white" *ngIf="secBildirimler.islem">Onaylandı</span>
+        <span class="badge badge-pill bg-danger text-white" *ngIf="!secBildirimler.islem">Onay Bekliyor!!</span>
+      </p>
+      <button class="btn btn-outline-danger btn-sm" (click)="bildirimdetay=false;">Kapat</button>
+
+    </div>
+  </div>
+  <div class="row" *ngIf="bildirimekleduzenle">
+    <div class="col-md-12 alert alert-secondary">
+      <h4>Duyuru Ekle - Düzenle</h4>
+      <form #frm="ngForm" (submit)="BildirimKaydet()">
+        <div class="form-group">
+          <label>Duyuru Adı</label>
+          <input type="text" class="form-control" name="baslik" [(ngModel)]="secBildirimler.baslik">
+        </div>
+        <div class="form-group">
+          <label>Duyuru Açıklaması</label>
+          <textarea class="form-control" name="aciklama" [(ngModel)]="secBildirimler.icerik"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Duyuru Kategorisi</label>
+          <select class="form-control" name="kategori" [(ngModel)]="secBildirimler.kategori">
+            <option style="color: blue;" >Öneri</option>
+            <option style="color:aqua;">Şikayet</option>
+            <option style="color: red;">Güncelleme</option>
+            <option style="color:green  ;">İş</option>
+            <option style="color: yellow;">Diğer</option>
+          </select>
+        </div>
+        
+          <input type="submit" value="Kaydet" class="btn btn-outline-success btn-sm">
+              
+                 
+      </form><br>
+      <button class="btn btn-outline-danger btn-sm ml-2"  (click)="bildirimekleduzenle=false;">Kapat</button>   
+          <button class="btn btn-outline-warning btn-sm ml-2" (click)="BildirimTemizle()">Temizle</button>
+      <div [ngClass]="sonuc2.islem ? 'alert alert-success':'alert alert-danger'" *ngIf="sonuc2.mesaj?.length>0">
+        {{sonuc2.mesaj}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Duyurular</h4>
+      <button class="btn btn-outline-info btn-sm" (click)="bildirimekleduzenle=true;">Yeni Duyuru Ekle</button>
+      <table class="table mt-2">
+        <thead>
+          <td>Başlık</td>
+          <td>Kategori</td>
+          <td>Durumu</td>
+          <td>İşlem</td>
+          <td>Detay</td>
+          <td>Düzenle</td>
+          <td>Sil</td>
+        </thead>
+        <tbody>
+          <tr *ngFor="let   bildirim  of bildirimler">
+            <td>{{bildirim.baslik}}</td>
+            <td>{{bildirim.kategori}}</td>
+            <td>
+              <span class="badge badge-pill bg-success text-white" *ngIf="bildirim.islem">Onaylandı</span>
+              <span class="badge badge-pill bg-danger text-white" *ngIf="!bildirim.islem">Onay Bekliyor!!</span>
+            </td>
+            <td>
+
+              <button class="btn btn-outline-success btn-sm" (click)="BildirimTamamlaIptal(bildirim,true)"
+                *ngIf="!bildirim.islem">Duyuruyu Onayla!</button>
+              <button class="btn btn-outline-danger btn-sm" (click)="BildirimTamamlaIptal(bildirim,false)"
+                *ngIf="bildirim.islem">Duyuru Onaylanmadı!!</button>
+
+            </td>
+            <td><button class="btn btn-outline-info btn-sm" (click)="BildirimSec(bildirim);bildirimdetay=true;">Detay</button>
+            </td>
+            <td><button class="btn btn-outline-warning btn-sm"
+                (click)="BildirimSec(bildirim);bildirimekleduzenle=true;">Düzenle</button></td>
+            <td><button class="btn btn-outline-danger btn-sm" (click)="BildirimSec(bildirim);bildirimsilme=true;">Sil</button></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

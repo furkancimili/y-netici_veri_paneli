@@ -1,0 +1,18 @@
+
+      <h4>Site´deki Kayıtlı Makaleler <hr></h4>
+      <table class="table">
+        <thead>
+          <th>Makale Adı<hr></th>
+          <th>Makale Yazar UİD<hr> </th>
+          <th>Eklenme Tarihi<hr></th>
+          <th>Düzenlenme Tarihi  <hr></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let kayit of kayitlar">
+            <td>{{kayit.baslik}}</td>
+            <td>{{kayit.uid}}</td>
+            <td>{{kayit.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}}</td>
+            <td>{{kayit.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}}</td>
+          </tr>
+        </tbody>
+      </table>

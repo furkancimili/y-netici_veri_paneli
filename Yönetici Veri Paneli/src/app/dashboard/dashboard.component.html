@@ -1,0 +1,408 @@
+<div class="row" id="proBanner">
+  <div class="col-12">
+    
+  </div>
+</div>
+<div class="page-header">
+  <h3 class="page-title">
+    <span class="page-title-icon bg-gradient-primary text-white mr-2">
+      <i class="mdi mdi-home"></i>                 
+    </span>
+   Yönetici Veri Paneli
+  </h3>
+  <nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">
+        <span></span>Panele Genel Bakış
+        <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+      </li>
+    </ul> 
+  </nav>
+</div>
+<div class="row">
+  <div class="col-md-4 stretch-card grid-margin">
+    <div class="card bg-gradient-danger card-img-holder text-white">
+      <div class="card-body">
+        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>
+        <h4 class="font-weight-normal mb-3">Yıllık Kullanıcı Sayısı
+          <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+        </h4>
+        <h2 class="mb-5">32.754 Bin</h2>
+        <h6 class="card-text">Geçen Yıla Göre Artış %25</h6>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 stretch-card grid-margin">
+    <div class="card bg-gradient-info card-img-holder text-white">
+      <div class="card-body">
+        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                  
+        <h4 class="font-weight-normal mb-3">Yıllık Kaybedilen Kullanıcı Sayısı
+          <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+        </h4>
+        <h2 class="mb-5">4,365 Bin</h2>
+        <h6 class="card-text">Geçen Yıla Göre Artış %50</h6>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 stretch-card grid-margin">
+    <div class="card bg-gradient-success card-img-holder text-white">
+      <div class="card-body">
+        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                                    
+        <h4 class="font-weight-normal mb-3">Yıllık Ziyaretçi Sayısı
+          <i class="mdi mdi-diamond mdi-24px float-right"></i>
+        </h4>
+        <h2 class="mb-5">75,541</h2>
+        <h6 class="card-text">Geçen Yıla Göre Artış %20</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-7 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex flex-wrap justify-content-between">
+          <h4 class="card-title">Yıllara Göre İstatistikler (Bin)</h4>
+          <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal">
+            <ul>
+              <li>
+                <span class="legend-dots"></span>Kaybedilen Kullanıcı
+              </li>
+              <li>
+                <span class="legend-dots"></span>Aktif Kullanıcı 
+              </li>
+              <li class="mr-0">
+                <span class="legend-dots"></span>Ziyaretçi Sayısı
+              </li>
+            </ul>
+          </div>
+        </div>
+        <canvas baseChart #visitSaleChart [chartType]="'bar'" [datasets]="visitSaleChartData" [labels]="visitSaleChartLabels" [options]="visitSaleChartOptions" [colors]="visitSaleChartColors"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-5 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Kategoriler</h4>
+        <canvas baseChart [chartType]="'doughnut'" [datasets]="trafficChartData" [labels]="trafficChartLabels" [options]="trafficChartOptions" [colors]="trafficChartColors"></canvas>
+        <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4">
+          <ul>
+            <li>
+              <span class="legend-dots"></span>Yazılım
+              <span class="float-right">%30</span>
+            </li>
+            <li>
+              <span class="legend-dots"></span>Robotik
+              <span class="float-right">%25</span>
+            </li>
+            <li>
+              <span class="legend-dots"></span>Donanım
+              <span class="float-right">%20</span>
+            </li>
+            <li>
+              <span class="legend-dots"></span>Yapay Zeka
+              <span class="float-right">%15</span>
+            </li>
+            <li>
+              <span class="legend-dots"></span>Grafik
+              <span class="float-right">%10</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="row">
+  <div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Son Yazılan Makaleler</h4>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  Adı Soyadı
+                </th>
+                <th>
+                  En Son Yazdığı Makale 
+                </th>
+                <th>
+                  Kategorisi
+                </th>
+                <th>
+                  Son Güncelleme
+                </th>
+                <th>
+                 Yazdığı Makale Okunma Sayısı (Bin)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img src="https://scontent.fadb3-2.fna.fbcdn.net/v/t1.0-9/131391280_2531239417020109_813916734117414682_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=QpvG6E8KKggAX_vHTM9&_nc_ht=scontent.fadb3-2.fna&oh=508c94e0897a76d0cddf0e8304faa460&oe=60145FEB" class="mr-2" alt="image">
+                  Furkan Çimili
+                </td>
+                <td>
+                  Yazılım İle Tanışın
+                </td>
+                <td>
+                  <label class="badge badge-gradient-primary">Yazılım</label> &nbsp;
+                
+               
+                </td>
+                <td>
+                   1 Ocak 2021
+                </td>
+                <td>
+                  25.325 &nbsp;&nbsp;
+                  <label class="text-danger"> %5.32 <i class="mdi mdi-arrow-down"></i></label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/images/faces/face2.jpg" class="mr-2" alt="image">
+                  Ayşe Nur Çiçek
+                </td>
+                <td>
+                  Robotik Kodlama 
+                </td>
+                <td>
+                  <label class="badge badge-gradient-info">Robotik Kodlama</label> &nbsp;                  
+                </td>
+                <td>
+                  6 Ocak 2020
+                </td>
+                <td>
+                  17.243 &nbsp;&nbsp;
+                  <label class="text-danger"> %15.21 <i class="mdi mdi-arrow-down"></i></label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/images/faces/face3.jpg" class="mr-2" alt="image">
+                  Ahmet Sarıçoban
+                </td>
+                <td>
+                  Yılın Son Bilgisayar Kasası Toplaması
+                </td>
+                <td>
+                  <label class="badge badge-gradient-success">Donanım</label>
+                </td>
+                <td>
+                  30 Aralık 2020                 
+                </td>
+                <td>
+                  35.524 &nbsp;&nbsp;
+                  <label class="text-success">%12.31 <i class="mdi mdi-arrow-up"></i></label>            
+                </td>
+                
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/images/faces/face4.jpg" class="mr-2" alt="image">
+                  Oğuz Ataç
+                </td>
+                <td>
+                  Grafik Tasarım
+                </td>
+                <td>
+                  <label class="badge badge-gradient-warning">Grafik</label> &nbsp;
+                </td>
+                <td>
+                  3 Ocak 2021
+                </td>
+                <td>
+                  31.253 &nbsp;&nbsp;
+                  <label class="text-success">%8.21 <i class="mdi mdi-arrow-up"></i></label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5 grid-margin stretch-card">
+    <div class="card">
+        <ngb-datepicker #dp [(ngModel)]="date" (navigate)="date = $event.next" class="w-100 border-0"></ngb-datepicker>
+    </div>
+  </div>
+  <div class="col-md-7 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Makale Önizlemesi</h4>
+        <div class="d-flex">
+          <div class="d-flex align-items-center mr-4 text-muted font-weight-light">
+            <i class="mdi mdi-account-outline icon-sm mr-2"></i>
+            <span>Furkan Çimili</span>
+          </div>
+          <div class="d-flex align-items-center text-muted font-weight-light">
+            <i class="mdi mdi-clock icon-sm mr-2"></i>
+            <span>1 Ocak 2021</span>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-6 pr-1">
+            <img src="data:image/jpeg;base64,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" class="mb-2 mw-100 w-100 rounded" alt="image">
+          </div>
+          <div class="col-6 pl-1">
+            <img src="https://www.referansceviri.com/assets/images/Sayfa/grafik-tasarim/grafik-tasarim.png" class="mb-2 mw-100 w-100 rounded" alt="image">
+
+          </div>
+        </div>
+        <div class="d-flex mt-5 align-items-top">
+          <img src="https://scontent.fadb3-2.fna.fbcdn.net/v/t1.0-9/131391280_2531239417020109_813916734117414682_n.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=QpvG6E8KKggAX_vHTM9&_nc_ht=scontent.fadb3-2.fna&oh=508c94e0897a76d0cddf0e8304faa460&oe=60145FEB" class="img-sm rounded-circle mr-3" alt="image">
+          <div class="mb-0 flex-grow">
+            <h5 class="mr-2 mb-2">Yapay Zekanın Grafik Tasarımdaki Yeri</h5>
+            <p class="mb-0 font-weight-light">Geliştirilmiş yapay zeka destekli özne seçme (konu seçimi) özelliği ile hayallerimi gerçekleştiren program az önce güncelleyip test ettim ve başarılı sonuç veriyor. En ufak detaylara kadar bir kelime seçimi veriyor.</p>
+          </div>
+          <div class="ml-auto">
+            <i class="mdi mdi-heart-outline text-muted"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-7 grid-margin grid-margin-md-0 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">En Çok Etkileşimdeki Kullanıcılar</h4>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  #
+                </th>
+                <th>
+                  İsim Soyisim
+                </th>
+                <th>
+                  Üyelik Tarihi
+                </th>
+                <th>
+                  Etkileşimi
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  1
+                </td>
+                <td>
+                  Mert Can Amasya
+                </td>
+                <td>
+                  22 Eylül 2015
+                </td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  2
+                </td>
+                <td>
+                  Sultan Nur Ulu
+                </td>
+                <td>
+                  6 Ekim 2017
+                </td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  3
+                </td>
+                <td>
+                  Döndü Aslan
+                </td>
+                <td>
+                  10 Ocak 2016
+                </td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  4
+                </td>
+                <td>
+                  Kadriye Ergün
+                </td>
+                <td>
+                  14 Mart 2019
+                </td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  5
+                </td>
+                <td>
+                  Huseyin Belce
+                </td>
+                <td>
+                   19 Haziran 2018
+                </td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  6
+                </td>
+                <td>
+                  Muhammet Oğuz Çoşkun
+                               
+                </td>
+                <td>
+                 12 Aralık 2017
+                </td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Yapılacak</h4>
+        <app-todo></app-todo>
+      </div>
+    </div>
+  </div>
+</div>

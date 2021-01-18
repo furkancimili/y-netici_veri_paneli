@@ -1,0 +1,55 @@
+<div class="d-flex align-items-center auth px-0">
+  <div class="row w-100 mx-0">
+    <div class="col-lg-6 mx-auto">
+      <div class="auth-form-light text-center py-5 px-4 px-sm-5">
+        <div class="brand-logo">
+          <img src="assets/images/WebLogo.jpg" alt="logo">
+        </div>
+        <h3>Burada Yeni Misiniz ?</h3>
+        <h4 class="font-weight-light"> Bir kaç adımda kolayca kayıt olabilirsiniz</h4>
+        <form class="pt-3">
+          <form #frm="ngForm" (ngSubmit)="KullaniciKayitYap()">
+            <div class="card">
+              <div class="card-header">
+          <div class="form-group text-left">
+            <label>Adı Soyadı</label>
+            <input type="text" class="form-control" name="adsoyad" #adsoyad [(ngModel)]="secKullanici.adsoyad" required>
+          </div>
+          <div class="form-group text-left">
+            <label>E-Posta Adresi</label>
+              <input type="text" class="form-control" name="mail" #mail [(ngModel)]="secKullanici.mail" required>
+          </div>
+          <div class="form-group text-left">
+            <label>Telefon</label>
+            <input type="text" class="form-control" name="tel" [(ngModel)]="secKullanici.tel" required>
+          </div>
+          <div class="form-group text-left">
+            <label>Parola</label>
+              <input type="password" class="form-control" name="parola" #parola [(ngModel)]="secKullanici.parola" required>
+          </div>
+          <div class="mb-4">
+            <div class="form-check text-left">
+              <label class="form-check-label text-muted">
+                <input type="checkbox" class="form-check-input">
+                <i class="input-helper text-left"></i>
+                Tüm Hüküm ve Koşulları kabul ediyorum
+              </label>
+            </div>
+          </div>
+          <div class="card-footer">
+            <input type="submit" class="btn btn-outline-primary btn-block" value="Kayıt Ol" [disabled]="frm.invalid">
+                </div>
+      
+      <div [ngClass]="sonuc.islem ? 'alert alert-success':'alert alert-danger'" *ngIf="sonuc.mesaj?.length>0">
+        {{sonuc.mesaj}}</div>
+          <div class="card-block">
+            <button class="btn btn-block btn-google auth-form-btn" (click)="signInWithGoogle()"><span class="mdi mdi-google mr-2"></span></button>
+            <button class="btn btn-block btn-facebook auth-form-btn" (click)="signInWithFB()"><span class="mdi mdi-facebook mr-2"></span></button>
+          </div>
+          <div class="text-center mt-4 font-weight-light">
+            Zaten hesabınız var mı? <a routerLink="/login" class="text-primary">Oturum Aç</a>
+          </div>
+
+      </div>
+    </div>
+  
